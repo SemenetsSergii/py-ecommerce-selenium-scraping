@@ -103,9 +103,9 @@ def get_all_products() -> None:
     option = webdriver.ChromeOptions()
     option.add_argument("--headless")
     service = Service(ChromeDriverManager().install())
+    all_urls = SIMPLE_URLS + COMPLEX_URL
     with webdriver.Chrome(service=service, options=option) as driver:
-        process_urls(driver, SIMPLE_URLS)
-        process_urls(driver, COMPLEX_URL)
+        process_urls(driver, all_urls)
 
 
 if __name__ == "__main__":
